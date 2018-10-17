@@ -1,0 +1,125 @@
+.container {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  .title {
+    font-family: Arial;
+  }
+  .example-container {
+    position: absolute;
+    /*width: calc(100% - 300px);*/
+    /*height: calc(100% - 100px);*/
+    /*border: 1px solid rgba(0, 0, 0, 0.5);*/
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    top: 64px;
+    bottom: 0;
+    height: calc(100% - 60px);
+    background: #ffffff00;
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    /*box-shadow: 0px -4px 20px 0px #b0aaaa;*/ 
+  }
+  
+  .example-sidenav {
+    padding: 0;
+    width: 250px;
+    position: absolute;
+    box-shadow:  0 0 20px #8181814f;
+  }
+  .nav-var{
+    position: absolute;
+    height: 80px;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 123;
+  }
+  
+  .icon-large{
+    font-size: 30px;
+  }
+  app-listar-area{
+    width: 80% !important;
+  }
+  .fondo{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    opacity:0.3; /* Opacidad 60% */
+    /*left:;
+    top: 63px;
+    /*background-image: url(../assets/fondo_1.svg);*/
+    /*background-attachment: fixed;*/
+    /*background-size: 100% 100%;*/  
+  }
+  .mat-expansion-panel:not([class*=mat-elevation-z]) {
+    box-shadow: none;
+  }
+  a[mat-list-item]{
+    margin-left: 10px;
+  }
+  mat-drawer{
+    overflow-x: hidden;
+  }
+  body{
+    font-family: 'Cairo', sans-serif;
+    color:white;
+  }
+  .opciones{
+    font-family: 'Cairo', sans-serif;
+    color:white;
+  }
+  
+  .example-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #227810;
+  }
+  .example-card {
+    max-width: 400px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  
+  /**
+  .example-container {
+    position: absolute;
+    top: 60px;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    background: rgba(255, 0, 0, 0.5);
+  }
+  
+  .example-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }**/

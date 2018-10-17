@@ -1,0 +1,57 @@
+<!--<div  class="fondo"></div>        style="background:#227810"-->
+<link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+    <button mat-icon-button routerLink="/inicio"><mat-icon>home</mat-icon></button>
+    <span class="hide-on-med-and-down" >
+      Simulacion de Proceso Contensioso</span>
+    <!--<span class="show-on-small hide-on-large-only">Contensioso</span>-->
+    <span class="example-spacer"></span>
+    <button mat-icon-button routerlink =""><mat-icon>account_circle</mat-icon></button>
+    <!-- <div class="opciones">
+   <button mat-button routerLink="/inicio" name="home">HOME</button>
+      
+      <button class="hide-on-med-and-up" mat-icon-button [matMenuTriggerFor]="opciones" matTooltip="Opciones"><mat-icon>more_vert</mat-icon></button>
+      <mat-menu #opciones="matMenu">
+        <button mat-menu-item routerLink="/inicio">HOME</button>
+      </mat-menu>
+    </div>-->
+  </mat-toolbar>
+  <mat-drawer-container class="example-container" autosize color="disabled">
+    <mat-drawer #drawer class="example-sidenav" mode="side" opened="true">
+      <mat-nav-list>
+        <div mat-list-avatar>
+          <!--<img src="/assets/logo.jpg" alt="imagen" width="250" class="opacidad">-->
+          <!-- <img src="assets/HORMIG_opt.jpg"> -->
+        </div>
+        <mat-accordion>
+          <a mat-list-item routerLink="/inicio">Inicio</a>
+          <a mat-list-item routerLink="/registro">Registro</a>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Despachos
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <!-- <mat-nav-list> -->
+              <!-- <a mat-list-item routerLink="">Registrar Despacho</a> -->
+            <!-- </mat-nav-list> -->
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Demandas
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-nav-list>
+              <a mat-list-item routerLink="/demanda">Demanda 1</a>
+              <!-- <a mat-list-item routerLink="/mixer">Mixer</a> -->
+            </mat-nav-list>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-nav-list>
+    </mat-drawer> 
+
+    <!--<mat-toolbar class="example-footer">here go the footer </mat-toolbar>-->
+
+  <router-outlet></router-outlet>
