@@ -4,8 +4,8 @@
             {{!isLinear ? 'Habilitar' : 'Deshabilitar'}}
         </button>-->
         <!--<mat-checkbox class="example-margin" [(ngModel)]="disabled" color="primary">Disabled</mat-checkbox>-->
-<mat-horizontal-stepper>
-    <mat-step [stepControl]="firstFormGroup">
+<mat-horizontal-stepper #stepper>
+    <mat-step [stepControl]="firstFormGroup" >
         <form [formGroup]="firstFormGroup">
             <ng-template matStepLabel> Procedencia </ng-template>
             <!-- aqui empeiza el formulario  -->
@@ -60,7 +60,7 @@
                 </div> -->
         </form>
     </mat-step>
-    
+
     <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
             <ng-template matStepLabel>Demanda</ng-template>
