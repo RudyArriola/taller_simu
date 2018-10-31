@@ -31,3 +31,11 @@
   margin-left: 80px;
   max-width: 170px
 }
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}

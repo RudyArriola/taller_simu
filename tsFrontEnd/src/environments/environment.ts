@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyCBA8zc5hKXQWWQGHc4eEUiYRzoAeuEkZc',
+    authDomain: 'tallerdesimu.firebaseapp.com',
+    databaseURL: 'https://tallerdesimu.firebaseio.com',
+    projectId: 'tallerdesimu',
+    storageBucket: 'tallerdesimu.appspot.com',
+    messagingSenderId: '814148401019'
+  }
 };
 
 /*

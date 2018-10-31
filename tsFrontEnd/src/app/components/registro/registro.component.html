@@ -1,10 +1,126 @@
-<mat-tab-group>
     <!-- <mat-tab label="HOR 047" > -->
-        <button mat-raised-button color="primary" (click)="openDialog()">Deshabilitar</button>
+        <!-- <button mat-raised-button color="primary" (click)="openDialog()">Deshabilitar</button> -->
         <!--<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
             {{!isLinear ? 'Habilitar' : 'Deshabilitar'}}
         </button>-->
         <!--<mat-checkbox class="example-margin" [(ngModel)]="disabled" color="primary">Disabled</mat-checkbox>-->
+<mat-horizontal-stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel> Procedencia </ng-template>
+            <!-- aqui empeiza el formulario  -->
+            <div class="example-container">
+                    <mat-card class="example-card">
+                        <div class="example-container">
+                            <mat-form-field>
+                                <input matInput placeholder="Demandante" [formControl]="demandanteFormControl" pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*$">
+                                <mat-error *ngIf="!demandanteFormControl.hasError('required')">
+                                        Ingrese solo letras
+                                </mat-error>
+                                <mat-error *ngIf="demandanteFormControl.hasError('required')">
+                                    Demandante es requerido
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-select placeholder="Juez">
+                                    <mat-option value="option">Juez 1</mat-option>
+                                    <mat-option value="option">Juez 2</mat-option>
+                                    <mat-option value="option">Juez 3</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput placeholder="Demandado" [formControl]="demandadoFormControl" pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*$">
+                                <mat-error *ngIf="!demandadoFormControl.hasError('required')">
+                                    Ingrese solo letras
+                                </mat-error>
+                                <mat-error *ngIf="demandadoFormControl.hasError('required')">
+                                    Demandado es requerido
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                 <mat-select placeholder="Tipo de Demanda"> 
+                                    <mat-option value="option">Demanda 1</mat-option>
+                                    <mat-option value="option">Demanda 2</mat-option>
+                                    <mat-option value="option">Demanda 3</mat-option>
+                                 </mat-select><br>
+                             </mat-form-field>
+                            <mat-form-field>
+                                    <textarea matInput placeholder="Observaciones"></textarea>
+                            </mat-form-field>
+                        </div>
+                        <div class="button-row">
+                            <button mat-raised-button color="primary" matStepperNext>Aceptar</button>
+                            <button mat-raised-button color="primary" >Cancelar</button>
+                        </div>
+                    </mat-card>
+                </div>  
+                <!-- aqui termina el formulario -->
+                <!-- <div>
+                    <button mat-button matStepperNext routerLink="/demanda">Siguiente</button>
+                </div> -->
+        </form>
+    </mat-step>
+    
+    <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Demanda</ng-template>
+            <mat-form-field>
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                  </mat-form-field>
+                  
+                  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                  
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="position">
+                      <th mat-header-cell *matHeaderCellDef> No. </th>
+                      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                    </ng-container>
+                  
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="name">
+                      <th mat-header-cell *matHeaderCellDef> Demandante </th>
+                      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    </ng-container>
+                  
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="weight">
+                      <th mat-header-cell *matHeaderCellDef> Juez </th>
+                      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                    </ng-container>
+                  
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="symbol">
+                      <th mat-header-cell *matHeaderCellDef> Demandado </th>
+                      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="symbol">
+                        <th mat-header-cell *matHeaderCellDef> Tipo de Demanda </th>
+                        <td mat-cell *matCellDef="let element"> {{element.dem}} </td>
+                    </ng-container>
+                  
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  </table>
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+            <ng-template matStepLabel>Demanda</ng-template>
+                
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="fourthFormGroup">
+        <form [formGroup]="fourthFormGroup">
+            <ng-template matStepLabel>Demanda</ng-template>
+                    
+        </form>
+    </mat-step>
+</mat-horizontal-stepper>
+  
+        <div class="example-container">
         <mat-card class="example-card">
             <div class="example-container">
                 <mat-form-field>
@@ -33,35 +149,20 @@
                     </mat-error>
                 </mat-form-field>
                 <mat-form-field>
-                     <mat-select placeholder="Tipo de Demanda" [formControl]="tipoDemControl"> 
+                     <mat-select placeholder="Tipo de Demanda"> 
                         <mat-option value="option">Demanda 1</mat-option>
                         <mat-option value="option">Demanda 2</mat-option>
                         <mat-option value="option">Demanda 3</mat-option>
                      </mat-select><br>
                  </mat-form-field>
-
-                <!-- <mat-form-field> -->
-                    <!-- <input matInput type="tel" placeholder="Telf Cliente" [formControl]="telefono"  #input maxlength="8" pattern="^([0-9])*$" > -->
-                    <!-- <mat-hint align="end">{{input.value?.length || 0}}/8</mat-hint> -->
-                        <!-- <mat-error *ngIf="!telefono.hasError('required')"> -->
-                            <!-- Ingrese solo numeros -->
-                        <!-- </mat-error> -->
-                        <!-- <mat-error *ngIf="telefono.hasError('required')"> -->
-                            <!-- Ingrese numero -->
-                        <!-- </mat-error> -->
-                <!-- </mat-form-field> -->
                 <mat-form-field>
                         <textarea matInput placeholder="Observaciones"></textarea>
                 </mat-form-field>
             </div>
             <div class="button-row">
-                <button mat-raised-button color="primary" [disabled]='!telefono.valid' routerLink="/demanda">Aceptar</button>
+                <button mat-raised-button color="primary" routerLink="/demanda">Aceptar</button>
                 <button mat-raised-button color="primary" >Cancelar</button>
             </div>
         </mat-card>
-    <!-- </mat-tab> -->
-<!-- <mat-tab label="HOR 049">hola</mat-tab> -->
-<!-- <mat-tab label="HOR 017">hola</mat-tab> -->
-
-<!-- </mat-tab-group> -->
+    </div>
 <ng-content></ng-content>

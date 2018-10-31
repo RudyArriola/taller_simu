@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { RegistroComponent } from './components/registro/registro.component';
 import { DemandaComponent } from './components/demanda/demanda.component';
 import { LoginComponent } from './components/login/login.component';
+// import { User } from './modulos/user';
 
 
 @NgModule({
@@ -32,4 +33,9 @@ import { LoginComponent } from './components/login/login.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  key: string;
+  name: string;
+  age: number;
+  active = true;
+}
