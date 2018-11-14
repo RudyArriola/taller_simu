@@ -1,0 +1,41 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  .example-card {
+    max-width: 450px;
+  }
+.button-row button,
+.button-row a {
+  margin-right: 10px;
+}
+.example-radio-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.example-selected-value {
+  margin: 15px 0;
+}
+.card-options{
+  margin: 50px;
+  border: 0px solid;
+  margin-left: 80px;
+  max-width: 170px
+}
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
